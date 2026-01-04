@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" class="input1">
+    <p class="per">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vitae perferendis quos! Quisquam eos doloribus enim consectetur iure unde voluptate sint saepe, accusantium labore similique reprehenderit harum delectus voluptatum excepturi itaque a illum qui maxime eveniet quae voluptates dignissimos! Ea, sapiente. Quod aut ea possimus labore architecto at saepe nisi!</p>
+    <input type="text" placeholder="Pervnt pasting" class="input2">
+
+    <ol style="text-align: center; color: rgb(255, 0, 0); font-size:50px; list-style: none;">
+        <li>keyup and keydown</li>
+        <li>copy and paste</li>
+        <li>contextmenu</li>
+    </ol>
+
+    <script>
+        // -------------------------keyup and keydown---------------------------
+
+        let input1 = document.querySelector(".input1");
+        input1.addEventListener("keyup", (e) =>
+        {
+            console.log("key is up");
+        }
+        );
+        
+        input1.addEventListener("keydown", (e) =>
+        {
+            console.log("key is down");
+            console.log(e.key);
+        }
+        );
+        // in this above input-1 example we can make event on keybord keys
+        // and also print which key we have presed
+        
+        // -------------------------------------------------------
+        // document.addEventListener("keyup", (e) => 
+        // {
+            //     if(e.ctrlKey && e.key === 'a' || e.ctrlKey && e.key === 'c' || e.ctrlKey && e.key === 'v')
+            //     {
+                //         alert("Copying and pasting is not allowed here")
+                //     }
+                // });
+        // --------------------------------------------------------
+        
+        // in above we have create alert while copying and pasting
+        // in above example we can copy as well as paste, it just gave us information that somthing is copied, but does not stop us to copying and pasting 
+        // abd it does not give data that user has pasted what or what user has copied
+        // uncomment above code to try
+        
+        
+        let pera = document.querySelector(".per");
+        pera.addEventListener("copy", (e) =>
+        {
+            e.preventDefault();
+            alert("you cannot is copy anything");
+        });
+        // in above example we have seen that we cannot copy any thing fom pera
+        // if we paste it will show alert message
+        
+        let preinput = document.querySelector(".input2");
+        preinput.addEventListener("paste", (e) =>
+        {
+            e.preventDefault();
+            alert("Sorry!!! pasting is not allowed here");
+        });
+        
+        // in above example we have seen that we cannot paste any thing 
+        // if we paste it will show alert message
+        
+        
+        // ---------------------------------------------------------------------
+        // document.addEventListener("contextmenu", (e) =>
+        // {
+            //     e.preventDefault();
+            //     alert("Sorry !!! inspecting is not allowed here, so you cant right click he mouse");
+            // });
+        //---------------------------------------------------------------------
+            
+        // in above example we have stoped the user to right click the mouse buttton
+        // uncomment above code to try
+            
+        </script>
+</body>
+</html>
